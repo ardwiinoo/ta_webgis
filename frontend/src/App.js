@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react'
 import env from 'react-dotenv'
 
 
-
 delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
@@ -24,19 +23,19 @@ function App() {
     async function getData() {
       try {
         const request = await fetch(
-          "https://0a1c-2001-448a-404a-2936-a941-ddff-ff92-d10.ngrok-free.app/api/v1/location"
+          `${env.API_URL}api/v1/location`
         );
         const response = await request.json();
-        setData(response);
+        // console.log(response);
+        setData(response?.data);
       } catch(err) {
         console.log(err)
       }
-
-      //   console.log(response);
     }
     getData();
-  }, []);
+  } , []);
 
+  console.log(data);
 
   return (
     <MapContainer center={[51.505, -0.09]} zoom={13} style={{with:'100vw', height:'100vw'}} scrollWheelZoom={false}>
