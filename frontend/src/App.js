@@ -6,7 +6,7 @@ import { Popup } from 'react-leaflet/Popup'
 import L from 'leaflet'
 import { useEffect, useState } from 'react'
 import env from 'react-dotenv'
-
+import Navbar from './components/Navbar'
 
 delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
@@ -38,14 +38,18 @@ function App() {
   console.log(data);
 
   return (
-    <MapContainer center={[51.505, -0.09]} zoom={13} style={{with:'100vw', height:'100vw'}} scrollWheelZoom={false}>
-      <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-        <Marker position={[51.505, -0.09]}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
-    </MapContainer>
+    <div className='App'>
+      <Navbar/>
+      <MapContainer center={[-7.941214, 110.248160]} zoom={13} style={{with:'100vw', height:'100vw'}} scrollWheelZoom={false}>
+        <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+          <Marker position={[-7.941214, 110.248160]}>
+            <Popup>
+              Pondok Pesantren Ar Rahmah Kedungbule <br/>
+              <a href="">Lihat detail</a>
+            </Popup>
+          </Marker>
+      </MapContainer>
+    </div>
   );
 }
 
