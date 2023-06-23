@@ -73,7 +73,10 @@ const Detail = () => {
                     
                 </div>
             </div>
-            <div className='container bg-primary w-full rounded-md p-2 '>
+            <div className='container bg-primary w-full rounded-md p-2'>
+                <div className='p-2'>
+                    <h1 className='text-white font-bold'>Foto</h1>
+                </div>
                 <img src="https://picsum.photos/200/300" className='rounded-md object-fill w-full h-[350px]'/>
             </div>
         </div>
