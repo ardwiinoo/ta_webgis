@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Front-end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ini adalah bagian interface dari proyek WebGIS Pemetaan Pondok Pesantren di Bantul, Yogyakarta
 
-## Available Scripts
+## Memulai
 
-In the project directory, you can run:
+untuk menjalankan proyek ini di local anda, ikuti langkah - langkah berikut:
 
-### `npm start`
+## Persyaratan
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.Js (versi 12.0 atau lebih tinggi)
+- npm (versi 6.0 atau lebih tinggi)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalasi
 
-### `npm test`
+Clone repositori ke mesin lokal Anda menggunakan Git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```git
+git clone git@github.com:ardwiinoo/ta_webgis.git
+```
 
-### `npm run build`
+Masuk direktori proyek
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```git
+cd ./frontend
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Install dependensi yang dibutuhkan
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```git
+npm install 
+```
 
-### `npm run eject`
+## Menjalankan
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```git
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ini akan memulai aplikasi dan secara otomatis membukanya di browser web default Anda. Jika aplikasi tidak terbuka secara otomatis, buka <http://localhost:3000> di browser web Anda.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Membangun
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```git
+npm run build
+```
 
-## Learn More
+Ini akan membuat direktori build dengan build produksi aplikasi yang dioptimalkan dan siap untuk di deploy di hosting.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| [<img src="https://avatars.githubusercontent.com/ardwiinoo" width="100px;"/><br /><sub><b>Arif Dwi Nugroho</b></sub>](https://github.com/ardwiinoo) | [<img src="https://avatars.githubusercontent.com/nuruddinhid" width="100px;"/><br /><sub><b>Nuruddin Hidayat</b></sub>](https://github.com/nuruddinhid) |
+| :---: | :---: |
