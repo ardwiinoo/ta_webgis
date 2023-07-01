@@ -1,0 +1,358 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "WebGIS API Documentation",
+      "description": "Dokumentasi endpoint webgis pemetaan pondok kabupaten bantul",
+      "version": "1.0.0"
+    },
+    "basePath": "/v1",
+    "paths": {
+      "/location": {
+        "get": {
+          "description": "Mendapatkan semua data pondok beserta relasinya",
+          "tags": [
+            "Access Location"
+          ],
+          "responses": {
+            "200": {
+              "description": "Response OK",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "array"
+                  }
+                },
+                "example": {
+                  "error": "false",
+                  "message": "Success fetch school location",
+                  "data": [
+                    {
+                      "id": 1,
+                      "name": "Pondok 1",
+                      "image": "https://akcdn.detik.net.id/community/media/visual/2022/12/05/pondok-pesantren-asadiyah.png?w=700&q=90",
+                      "acreditation": "A",
+                      "location": {
+                        "lat": -7.792632496011777,
+                        "lon": 110.36579760605264
+                      },
+                      "address": {
+                        "street": "Jl.awowowk",
+                        "sub_district": null,
+                        "district": "Bantul",
+                        "regency": "Bantul",
+                        "pos_code": "5571"
+                      }
+                    },
+                    {
+                      "id": 2,
+                      "name": "Pondok 2",
+                      "image": "https://assets.ayobandung.com/crop/0x0:0x0/750x500/webp/photo/2023/01/12/4267477584.jpg",
+                      "acreditation": "A",
+                      "location": {
+                        "lat": -7.78834756335813,
+                        "lon": 110.3788036341976
+                      },
+                      "address": {
+                        "street": "Jl. Kenangan",
+                        "sub_district": "Bantul Utara",
+                        "district": "Bantul",
+                        "regency": "Yogyakarta",
+                        "pos_code": "54678"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "/location/{id}": {
+        "get": {
+          "description": "Mendapatkan satu data pondok beserta relasinya",
+          "tags": [
+            "Access Location"
+          ],
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "description": "ID dari pondok yang akan ditampilkan",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Response OK",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "array"
+                  }
+                },
+                "example": {
+                    "error": "false",
+                    "message": "Success fetch location",
+                    "data": {
+                      "id": 3,
+                      "name": "Pondok 1",
+                      "headmaster": null,
+                      "image": null,
+                      "sum_male_student": null,
+                      "sum_female_student": null,
+                      "sum_teacher": null,
+                      "acreditation": null,
+                      "location": {
+                        "lat": -7.943518270779647,
+                        "lon": 110.24803199466484
+                      },
+                      "address": {
+                        "street": "Kedungbule",
+                        "sub_district": "Trimurti",
+                        "district": "Srandakan",
+                        "regency": "Bantul",
+                        "pos_code": "55762"
+                      },
+                      "category": {
+                        "name": "Pondok Modern"
+                      },
+                      "curriculum": {
+                        "version": "2023",
+                        "sum_lesson": 24,
+                        "flagship_program": "STEM Education",
+                        "core_subjects": [
+                          "Matematika",
+                          "Science",
+                          "Teknologi",
+                          "Inggris"
+                        ],
+                        "elective_subjects": [
+                          "Ilmu Pengetahuan Sosial",
+                          "Seni",
+                          "Pendidikan Jasmani",
+                          "Studi Islam"
+                        ],
+                        "special_programs": [
+                          "Tahfidz",
+                          "Kewirausahaan",
+                          "Kepemimpinan",
+                          "Multimedia"
+                        ]
+                      }
+                    }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/location/nearest": {
+        "post": {
+          "description": "Mendapatkan data pondok terdekat dari lokasi penggun abeserta relasinya",
+          "tags": [
+            "Access Location"
+          ],
+          "parameters": [
+            {
+              "in": "formData",
+              "name": "lat",
+              "description": "latitude dari lokasi pengguna",
+              "required": true,
+              "schema": {
+                "type": "float"
+              }
+            },
+            {
+              "in": "formData",
+              "name": "lon",
+              "description": "longtitude dari lokasi pengguna",
+              "required": true,
+              "schema": {
+                "type": "float"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Response OK",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "array"
+                  }
+                },
+                "example": {
+                  "error": false,
+                  "message": "Success fetch nearest school location",
+                  "data": [
+                      {
+                          "id": 3,
+                          "name": "Pondok 1",
+                          "image": null,
+                          "acreditation": null,
+                          "location": {
+                              "lat": -7.943518270779647,
+                              "lon": 110.24803199466484
+                          },
+                          "address": {
+                              "street": "Kedungbule",
+                              "sub_district": "Trimurti",
+                              "district": "Srandakan",
+                              "regency": "Bantul",
+                              "pos_code": "55762"
+                          },
+                          "distance": "1.58"
+                      }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "/login": {
+        "post": {
+          "description": "Login ke sistem",
+          "tags": [
+            "Authentication"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "in": "formData",
+              "name": "username",
+              "description": "Username pengguna",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "formData",
+              "name": "password",
+              "description": "Password pengguna",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Response OK",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "array"
+                  }
+                },
+                "example": {
+                  "error": "false",
+                  "message": "Sign in successfully",
+                  "data": [
+                      {
+                          "id": 2,
+                          "fullname": "john_doe",
+                          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ7.eyJ1c2VySWQiOjIsImlhdCI6MTY4Njk5NzQ4MiwiZXhwIjoxNjg3MDAxMDgyfQ.AIleylT_TwQMdythhsKu_ZXWiFRRYIxAW-1IJRhI_pE"
+                      }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "/register": {
+        "post": {
+          "description": "Register ke sistem",
+          "tags": [
+            "Authentication"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "in": "formData",
+              "name": "fullname",
+              "description": "Fullname pengguna",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "formData",
+              "name": "username",
+              "description": "Username pengguna",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "formData",
+              "name": "password",
+              "description": "Password pengguna",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Response OK",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "array"
+                  }
+                },
+                "example": {
+                  "error": "false",
+                  "message": "User created succesfully",
+                  "data": [
+                    {
+                        "id": 5,
+                        "username": "johnwick123"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
