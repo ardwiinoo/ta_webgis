@@ -67,7 +67,7 @@ version : **v1**
 | GET | `/location/{id}` | Mendapatkan single data pondok pesantren dengan ID tertentu |
 | POST | `/location/nearest` | Mendapatkan semua data pondok pesantren berdasarkan lokasi terdekat dari pengguna |
 | POST | `/login` | Melakukan authentikasi dengan JWT |
-| DELETE | `/register` | Menambah user baru |
+| POST | `/register` | Menambah user baru |
 | GET | `/docs` | Dokumentasi dari endpoint yang dimiliki |
 
 ## Author
